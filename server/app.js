@@ -6,6 +6,7 @@ const koaBody = require("koa-body");
 const logger = require("koa-logger");
 const session = require("koa-session");
 const _ = require("lodash");
+const { wait: newWait } = require('./utils');
 
 // env
 const config = require("config");
@@ -98,9 +99,12 @@ async function main() {
   app.use(appRouter.routes());
 
   // start server
+  const wait = newWait()
   server.listen(port, () => {
     console.log(
       `Server started on port ${port}. Mode: ${process.env.NODE_ENV}.`
     );
+    wait.pass()
   });
+  await wait.wait
 }
