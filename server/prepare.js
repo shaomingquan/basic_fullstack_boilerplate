@@ -1,4 +1,12 @@
+const { inject } = require('./utils')
+const models = require('./models')
+const services = require('./services')
+
 async function prepare() {
+  // inject models services to controllers
+  inject.bind(models, services)
+  inject.hijackKoaRouter()
+
   // TODO, mongodb connect
 }
 
