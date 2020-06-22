@@ -1,0 +1,27 @@
+# local test only
+/mai_design
+/ant-design
+
+# vscode config (contains remote deploy credentials)
+.vscode
+
+# misc
+.DS_Store
+
+node_modules
+dist
+build
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+.idea/*
+
+// VERBOSE_TPL

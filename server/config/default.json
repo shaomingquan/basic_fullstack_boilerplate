@@ -1,0 +1,11 @@
+{
+  "api_root": "/api",
+  "serve_static": {
+    "static_root": "../client/build"
+  },
+  "koa_body": {
+    "multipart": true,
+    "formLimit": "10mb",
+    "jsonLimit": "5mb"
+  }
+}

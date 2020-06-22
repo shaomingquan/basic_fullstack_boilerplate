@@ -1,0 +1,30 @@
+{
+  "name": "basic_fullstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "concurrently \"cd client && npm start\" \"cd server && npm start\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "output-path": "",
+  "public-path": "",
+  "devDependencies": {
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {}
+}
