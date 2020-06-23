@@ -1,13 +1,13 @@
-const { inject } = require('./utils')
-const models = require('./models')
-const services = require('./services')
+const { inject } = require("@utils");
+const models = require("@models");
+const services = require("@services");
 
 async function prepare() {
   // inject models services to controllers
-  inject.bind(models, services)
-  inject.hijackKoaRouter()
+  inject.bind(models, services);
+  inject.hijackKoaRouter();
 
-  // TODO, mongodb connect
+  // db connect
 }
 
 async function prepared() {
@@ -15,7 +15,7 @@ async function prepared() {
 }
 
 process.on("SIGINT", function() {
-  // TODO, mongodb disconnect
+  // db disconnect
   // db.stop(function(err) {
   //   process.exit(err ? 1 : 0);
   // });

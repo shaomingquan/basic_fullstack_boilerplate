@@ -1,5 +1,6 @@
 {
   "is_dev": false,
   "is_prod": true,
-  "port": 5000
+  "port": 5000,
+  "mongodb_connect_string": "mongodb://127.0.0.1:27017/sample" 
 }

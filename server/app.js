@@ -1,3 +1,4 @@
+require("module-alias/register");
 const Koa = require("koa");
 const Router = require("koa-router");
 const http = require("http");
@@ -6,7 +7,7 @@ const koaBody = require("koa-body");
 const logger = require("koa-logger");
 const session = require("koa-session");
 const _ = require("lodash");
-const { wait: newWait } = require('./utils');
+const { wait: newWait } = require("@utils");
 
 // env
 const config = require("config");
@@ -16,7 +17,7 @@ const { is_dev, port } = config;
 const {
   "error-handler": errorHandler,
   "static-server": staticServer
-} = require("./middlewares");
+} = require("@middlewares");
 
 const { prepare, prepared } = require("./prepare");
 
@@ -84,7 +85,7 @@ async function main() {
   const apiRouter = new Router();
 
   // entries
-  const controllers = require("./controllers");
+  const controllers = require("@controllers");
   for (const { router, namespace, middwares } of Object.values(controllers)) {
     if (
       !_.isString(namespace) ||
@@ -99,12 +100,12 @@ async function main() {
   app.use(appRouter.routes());
 
   // start server
-  const wait = newWait()
+  const wait = newWait();
   server.listen(port, () => {
     console.log(
       `Server started on port ${port}. Mode: ${process.env.NODE_ENV}.`
     );
-    wait.pass()
+    wait.pass();
   });
-  await wait.wait
+  await wait.wait;
 }
