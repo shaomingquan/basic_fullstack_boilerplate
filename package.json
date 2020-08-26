@@ -26,5 +26,8 @@
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "mobx": "^5.15.6",
+    "mobx-react": "^6.2.5"
+  }
 }
