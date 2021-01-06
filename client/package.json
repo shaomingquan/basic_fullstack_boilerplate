@@ -8,7 +8,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "antd": "^3.26.18",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "customize-cra": "^1.0.0",
     "less-loader": "^6.1.2",
     "mobx": "^5.15.4",
